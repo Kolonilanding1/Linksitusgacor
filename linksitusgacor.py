@@ -930,7 +930,6 @@ async def on_startup(app: Application):
         auto_task = asyncio.create_task(auto_send_messages(app))
         logging.info("🚀 Auto-send dimulai saat startup.")
 
-    
 class SimpleHandler(BaseHTTPRequestHandler):
     def do_GET(self):
         if self.path == '/health':
@@ -943,6 +942,16 @@ class SimpleHandler(BaseHTTPRequestHandler):
             self.end_headers()
             self.wfile.write(b"Bot is alive!")
 
+    def do_HEAD(self):
+        # Kirim response header yang sama seperti do_GET, tanpa body
+        if self.path == '/health':
+            self.send_response(200)
+            self.send_header('Content-type', 'text/plain')
+            self.end_headers()
+        else:
+            self.send_response(200)
+            self.end_headers()
+
 
 def start_ping_server():
     import os
@@ -953,15 +962,12 @@ def start_ping_server():
 # Jalankan server HTTP di thread terpisah
 threading.Thread(target=start_ping_server, daemon=True).start()
 
-
 def log_activity(user_id, username, action):
     try:
         with open("userlist.txt", "a", encoding="utf-8") as f:
             f.write(f"{datetime.now()} | {user_id} | {username} | {action}\n")
     except Exception as e:
         logging.error(f"Failed to write log: {e}")
-
-
 
 def main():
     application = Application.builder().token(API_TOKEN).build()
