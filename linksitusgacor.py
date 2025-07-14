@@ -930,18 +930,29 @@ async def on_startup(app: Application):
         auto_task = asyncio.create_task(auto_send_messages(app))
         logging.info("🚀 Auto-send dimulai saat startup.")
 
+    
 class SimpleHandler(BaseHTTPRequestHandler):
     def do_GET(self):
-        self.send_response(200)
-        self.end_headers()
-        self.wfile.write(b"Bot is alive!")
+        if self.path == '/health':
+            self.send_response(200)
+            self.send_header('Content-type', 'text/plain')
+            self.end_headers()
+            self.wfile.write(b"OK")
+        else:
+            self.send_response(200)
+            self.end_headers()
+            self.wfile.write(b"Bot is alive!")
+
 
 def start_ping_server():
-    server = HTTPServer(('0.0.0.0', 8080), SimpleHandler)
+    import os
+    port = int(os.environ.get('PORT', 8080))
+    server = HTTPServer(('0.0.0.0', port), SimpleHandler)
     server.serve_forever()
 
 # Jalankan server HTTP di thread terpisah
 threading.Thread(target=start_ping_server, daemon=True).start()
+
 
 def log_activity(user_id, username, action):
     try:
