@@ -1,32 +1,20 @@
 import os
-import logging
 import asyncio
+import logging
 import threading
 from datetime import datetime
 from http.server import HTTPServer, BaseHTTPRequestHandler
 
 import pytz
-from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update
+from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update, Bot
 from telegram.constants import ParseMode
 from telegram.error import BadRequest
 from telegram.ext import (
     Application,
-    ApplicationBuilder,
     CommandHandler,
     CallbackQueryHandler,
     ContextTypes,
 )
-from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update
-from telegram.constants import ParseMode
-from telegram.error import BadRequest
-from telegram.ext import ContextTypes
-from telegram.ext import Application
-from telegram.ext import CommandHandler
-from telegram.ext import CallbackQueryHandler
-import asyncio
-import logging
-import pytz
-from datetime import datetime
 
 # Pindahkan verification_map ke sini supaya global dan bisa diakses semua fungsi
 verification_map = {
