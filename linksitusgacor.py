@@ -571,7 +571,7 @@ async def info_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
         keyboard = [
             [InlineKeyboardButton("🔗 LINK KOLONI4D VIP 1",url="https://mez.ink/koloni4d/")],
             [InlineKeyboardButton("🔗 LINK KOLONI4D VIP 2",url="https://heylink.me/LinkAlternatifKoloni4D/")],
-            [InlineKeyboardButton("📱 CHANNEL OFFICIAL KOLONI4D", url="https://t.me/koloni4d_official")],
+            [InlineKeyboardButton("📱 CHANNEL OFFICIAL KOLONI4D", url="https://t.me/koloni4d_official1")],
             [InlineKeyboardButton("💬 GRUP PUBLIK", url='https://t.me/SITUSLINKGACOR4D')],  
             [InlineKeyboardButton("💬 GRUP PUBLIK 2", url='https://t.me/InfoFreebet4D')],
             [InlineKeyboardButton("⬅️ Kembali", callback_data='LINK_KOLONI4D')],   
@@ -590,7 +590,7 @@ async def info_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     # Menambahkan bagian KOLONI4D_OFFICIAL dengan tombol GRUP PUBLIK
     elif query.data == 'KOLONI4D_OFFICIAL':
         keyboard = [
-            [InlineKeyboardButton("📱 CHANNEL OFFICIAL", url="https://t.me/koloni4d_official")],
+            [InlineKeyboardButton("📱 CHANNEL OFFICIAL", url="https://t.me/koloni4d_official1")],
             [InlineKeyboardButton("💬 GRUP PUBLIK", url='https://t.me/SITUSLINKGACOR4D')],  
             [InlineKeyboardButton("💬 GRUP PUBLIK 2", url='https://t.me/InfoFreebet4D')],
             [InlineKeyboardButton("⬅️ Kembali", callback_data='LINK_KOLONI4D')],  
@@ -609,7 +609,7 @@ async def info_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     elif query.data == 'KOLONI4D_RTP':
         keyboard = [
             [InlineKeyboardButton("📱 CHANNEL OFFICIAL", url="https://rtpkln4d-v1.pagesco.de/")],
-            [InlineKeyboardButton("📱 CHANNEL OFFICIAL", url="https://t.me/koloni4d_official")],
+            [InlineKeyboardButton("📱 CHANNEL OFFICIAL", url="https://t.me/koloni4d_official1")],
             [InlineKeyboardButton("💬 GRUP PUBLIK", url='https://t.me/SITUSLINKGACOR4D')],  
             [InlineKeyboardButton("💬 GRUP PUBLIK 2", url='https://t.me/InfoFreebet4D')],
             [InlineKeyboardButton("⬅️ Kembali", callback_data='LINK_KOLONI4D')],  
@@ -627,7 +627,7 @@ async def info_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     elif query.data == 'KOLONI4D_CLAIM':
         keyboard = [
             [InlineKeyboardButton("🎁 CLAIM FREEBET KOLONI4D",callback_data='KOLONI4D_VERIFIKASI')],
-            [InlineKeyboardButton("📱 CHANNEL OFFICIAL KOLONI4D", url="https://t.me/koloni4d_official")],
+            [InlineKeyboardButton("📱 CHANNEL OFFICIAL KOLONI4D", url="https://t.me/koloni4d_official1")],
             [InlineKeyboardButton("💬 GRUP PUBLIK", url='https://t.me/SITUSLINKGACOR4D')],  
             [InlineKeyboardButton("💬 GRUP PUBLIK 2", url='https://t.me/InfoFreebet4D')],
             [InlineKeyboardButton("⬅️ Kembali", callback_data='LINK_KOLONI4D')],  
