@@ -872,15 +872,8 @@ async def thank_you_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 async def auto_send_messages(app: Application):
     index = 0
-    duration = 24 * 60 * 60  # 24 jam dalam detik
-    start_time = asyncio.get_running_loop().time()
 
     while True:
-        current_time = asyncio.get_running_loop().time()
-        if current_time - start_time > duration:
-            logging.info("⏱️ 24 jam selesai. Stop kirim otomatis.")
-            break
-
         try:
             if not messages:
                 logging.warning("🚫 List messages kosong.")
@@ -906,7 +899,7 @@ async def auto_send_messages(app: Application):
 
             logging.info(f"✅ Pesan ke-{index + 1} terkirim.")
             index = (index + 1) % len(messages)
-            await asyncio.sleep(3600)  # 2 jam
+            await asyncio.sleep(3600)  # Delay 1 jam (bukan 2 jam ya, kamu tulis komentar 2 jam, tapi angkanya 3600 = 1 jam)
 
         except Exception as e:
             logging.error(f"❌ Gagal kirim pesan otomatis (index {index}): {e}")
@@ -981,3 +974,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
